@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>K8s Cleaner - Kubernetes Cluster Cleanup Tool</title>
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="K8s Cleaner - Kubernetes Cluster Cleanup Tool" />
+    <meta name="description" content="K8s Cleaner is a powerful tool that automates the cleanup of unused resources in Kubernetes clusters, ensuring optimal performance and resource utilization." />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://k8scleaner.io/" />
+    <meta property="og:title" content="K8s Cleaner - Kubernetes Cluster Cleanup Tool" />
+    <meta property="og:description" content="K8s Cleaner is a powerful tool that automates the cleanup of unused resources in Kubernetes clusters, ensuring optimal performance and resource utilization." />
+    <meta property="og:image" content="https://example.com/k8s-cleaner-image.jpg" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://k8scleaner.io/" />
+    <meta property="twitter:title" content="K8s Cleaner - Kubernetes Cluster Cleanup Tool" />
+    <meta property="twitter:description" content="K8s Cleaner is a powerful tool that automates the cleanup of unused resources in Kubernetes clusters, ensuring optimal performance and resource utilization." />
+    <meta property="twitter:image" content="https://example.com/k8s-cleaner-image.jpg" />
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="assets/images/K8sCleanerLogoFav.png" type="image/png" />
+    <!-- ===== All CSS files ===== -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/lineicons.css" />
+    <link rel="stylesheet" href="assets/css/ud-styles.css" />
+    <style>
+        /* Custom styles for k8s-cleaner */
+        .ud-demos { padding: 120px 0; position: relative; background: var(--ud-primary-color); }
+        .ud-features { padding: 120px 0; position: relative; background: var(--ud-light-color); }
+        .ud-about { padding: 120px 0; position: relative; background: var(--ud-white-color); }
+        /* Additional custom styles here */
+    </style>
+</head>
+<body>
+    <!-- ====== Header Start ====== -->
+    <header class="ud-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="index.html">
+                            <span class="fw-bold text-white startup-logo">K8s Cleaner</span>
+                        </a>
+                        <button class="navbar-toggler">
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse">
+                            <ul id="nav" class="navbar-nav mx-auto">
+                                <li class="nav-item"><a class="ud-menu-scroll" href="#home">Home</a></li>
+                                <li class="nav-item"><a class="ud-menu-scroll" href="#features">Features</a></li>
+                                <li class="nav-item"><a class="ud-menu-scroll" href="#demos">Demos</a></li>
+                                <li class="nav-item"><a class="ud-menu-scroll" href="#about">How it works</a></li>
+                                <li class="nav-item"><a href="blog.html"> Blog </a></li>
+                                <li class="nav-item"><a class="ud-menu-scroll" href="#team">Team</a></li>
+                                <li class="nav-item"><a class="ud-menu-scroll" href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ====== Header End ====== -->
+    
+    <!-- ====== Hero Start ====== -->
+    <section class="ud-hero" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ud-hero-content wow fadeInUp" data-wow-delay=".2s">
+                        <h1 class="ud-hero-title">Optimize Your Kubernetes Clusters with K8s Cleaner</h1>
+                        <p class="ud-hero-desc">Designed for Kubernetes administrators, K8s Cleaner efficiently identifies and removes unused resources to enhance cluster performance and reduce operational costs.</p>
+                        <ul class="ud-hero-buttons">
+                            <li><a href="https://gianlucam76.github.io/k8s-cleaner/getting_started/install/install/" rel="nofollow noopener" target="_blank" class="ud-main-btn ud-white-btn"> Get Started </a></li>
+                            <li><a href="https://github.com/gianlucam76/k8s-cleaner" rel="nofollow noopener" target="_blank" class="ud-main-btn ud-link-btn"> Contribute <i class="lni lni-arrow-right"></i> </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== Hero End ====== -->
+
+    <!-- ====== Features Start ====== -->
+    <section id="features" class="ud-features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ud-section-title text-center mx-auto">
+                        <h2>Streamlining Kubernetes Resource Management</h2>
+                        <p> K8s Cleaner consolidates and automates the cleanup of unused resources, enabling efficient utilization across clusters. </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-sm-6">
+                    <div class="ud-single-feature wow fadeInUp" data-wow-delay=".1s">
+                        <div class="ud-feature-icon"><i class="lni lni-trash"></i></div>
+                        <div class="ud-feature-content">
+                            <h3 class="ud-feature-title">Automated Resource Cleanup</h3>
+                            <p class="ud-feature-desc">K8s Cleaner automates the removal of unused and outdated resources, ensuring a clean and organized cluster environment.</p>
+                            <a href="#" class="ud-main-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-sm-6">
+                    <div class="ud-single-feature wow fadeInUp" data-wow-delay=".15s">
+                        <div class="ud-feature-icon"><i class="lni lni-safety-shield"></i></div>
+                        <div class="ud-feature-content">
+                            <h3 class="ud-feature-title">Safety and Compliance Checks</h3>
+                            <p class="ud-feature-desc">Ensures that all removals comply with defined policies, maintaining essential services while optimizing resource utilization.</p>
+                            <a href="#" class="ud-main-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-sm-6">
+                    <div class="ud-single-feature wow fadeInUp" data-wow-delay=".2s">
+                        <div class="ud-feature-icon"><i class="lni lni-bar-chart"></i></div>
+                        <div class="ud-feature-content">
+                            <h3 class="ud-feature-title">Usage Analytics and Reporting</h3>
+                            <p class="ud-feature-desc">Provides detailed reports on resource usage trends, enabling proactive management and forecasting of resource needs.</p>
+                            <a href="#" class="ud-main-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-sm-6">
+                    <div class="ud-single-feature wow fadeInUp" data-wow-delay=".25s">
+                        <div class="ud-feature-icon"><i class="lni lni-cog"></i></div>
+                        <div class="ud-feature-content">
+                            <h3 class="ud-feature-title">Seamless Integration</h3>
+                            <p class="ud-feature-desc">Integrates easily with existing Kubernetes frameworks and tools, ensuring a smooth onboarding process.</p>
+                            <a href="#" class="ud-main-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== Features End ====== -->
+    
+    <!-- ====== Demos Start ====== 
+    <section id="demos" class="ud-demos">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ud-section-title mx-auto text-center">
+                        <h2>See K8s Cleaner in Action</h2>
+                        <p>Watch our demos to see how K8s Cleaner optimizes Kubernetes resource management</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="ud-demo-video wow fadeInUp" data-wow-delay=".2s">
+                        <div class="ud-video-caption text-center mt-4">
+                            <h4>K8s Cleaner User Interface Video</h4>
+                            <p>Get a quick visual tour of K8s Cleaner's intuitive UI</p>
+                            <div class="text-center mt-4">
+                                <div class="ud-video-wrapper">
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/your_video_id" title="K8s Cleaner UI Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ud-demo-video wow fadeInUp" data-wow-delay=".2s">
+                        <div class="ud-video-caption text-center mt-4">
+                            <h4>K8s Cleaner Click-through Demo</h4>
+                            <p>Take a self-paced, step-by-step overview of K8s Cleaner's top features and workflows</p>
+                            <div class="text-center mt-4">
+                                <div>
+                                    <script async src="https://js.storylane.io/js/v2/storylane.js"></script>
+                                    <div class="sl-embed" style="position:relative;padding-bottom:calc(53.09% + 25px);width:100%;height:0;transform:scale(1)">
+                                        <iframe loading="lazy" class="sl-demo" src="https://app.storylane.io/demo/your_demo_id?embed=inline" name="sl-embed" allow="fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%!important;height:100%!important;border:1px solid rgba(63,95,172,0.35);box-shadow: 0px 0px 18px rgba(26, 19, 72, 0.15);border-radius:10px;box-sizing:border-box;"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    ====== Demos End ====== -->
+
+    <!-- ====== About Start ====== -->
+    <section id="about" class="ud-about">
+        <div class="container">
+            <div class="ud-about-wrapper wow fadeInUp" data-wow-delay=".2s">
+                <div class="ud-about-content-wrapper">
+                    <div class="ud-about-content">
+                        <span class="tag">How it works</span>
+                        <h2>Effortless Resource Management in 3 Steps!</h2>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <ol class="space-y-3">
+                                <li style="margin-bottom: 15px;"><strong>Step 1:</strong> Choose the cluster(s) that need cleanup.</li>
+                                <li style="margin-bottom: 15px;"><strong>Step 2:</strong> Specify the cleanup policies and parameters.</li>
+                                <li style="margin-bottom: 15px;"><strong>Step 3:</strong> K8s Cleaner automatically executes the cleanup, optimizing resource usage.</li>
+                            </ol>
+                        </ul>
+                        <a href="https://k8scleaner.io/how-it-works" target="_blank" rel="noopener noreferrer" class="ud-main-btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="ud-about-image">
+                    <img src="assets/images/about/k8s_cleaner_workflow.gif" alt="about-image" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== About End ====== -->
+
+    <!-- ====== Testimonials Start ====== 
+    <section id="testimonials" class="ud-testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ud-section-title mx-auto text-center">
+                        <span>Adopters</span>
+                        <h2>Trusted by Industry Leaders</h2>
+                        <p>Discover how top organizations leverage K8s Cleaner to optimize their Kubernetes environments.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="ud-single-testimonial wow fadeInUp" data-wow-delay=".1s">
+                        <div class="ud-testimonial-content">
+                            <p>"K8s Cleaner has significantly improved our cluster performance by reducing unnecessary resource consumption."</p>
+                        </div>
+                        <div class="ud-testimonial-info">
+                            <div class="ud-testimonial-image"><img src="assets/images/testimonials/company1_logo.png" alt="author" /></div>
+                            <div class="ud-testimonial-meta">
+                                <h4>Company A</h4>
+                                <p><a href="https://company-a.com" target="_blank">Learn More</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="ud-single-testimonial wow fadeInUp" data-wow-delay=".15s">
+                        <div class="ud-testimonial-content">
+                            <p>"With K8s Cleaner, we have automated our Kubernetes resource management and reduced downtime significantly."</p>
+                        </div>
+                        <div class="ud-testimonial-info">
+                            <div class="ud-testimonial-image"><img src="assets/images/testimonials/company2_logo.png" alt="author" /></div>
+                            <div class="ud-testimonial-meta">
+                                <h4>Company B</h4>
+                                <p><a href="https://company-b.com" target="_blank">Learn More</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="ud-single-testimonial wow fadeInUp" data-wow-delay=".2s">
+                        <div class="ud-testimonial-content">
+                            <p>"K8s Cleaner simplifies our workflow by providing seamless resource cleanup options tailored to our needs."</p>
+                        </div>
+                        <div class="ud-testimonial-info">
+                            <div class="ud-testimonial-image"><img src="assets/images/testimonials/company3_logo.png" alt="author" /></div>
+                            <div class="ud-testimonial-meta">
+                                <h4>Company C</h4>
+                                <p><a href="https://company-c.com" target="_blank">Learn More</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== Testimonials End ====== -->
+
+    <!-- ====== Team Start ====== -->
+    <section id="team" class="ud-team">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ud-section-title mx-auto text-center">
+                        <span>Our Team</span>
+                        <h2>Meet The Team Behind K8s Cleaner</h2>
+                        <p>Dedicated professionals committed to delivering an exceptional Kubernetes resource management experience.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-xl-4 col-lg-4 col-sm-6">
+                    <div class="ud-single-team wow fadeInUp" data-wow-delay=".1s">
+                        <div class="ud-team-image-wrapper">
+                            <div class="ud-team-image"><img src="assets/images/team/Simone-Morellato.png"" alt="Simone Morellato" /></div>
+                            <img src="assets/images/team/dotted-shape.svg" alt="shape" class="shape shape-1" />
+                        </div>
+                        <div class="ud-team-info">
+                            <h5>Simone morellato</h5>
+                            <h6>CMO</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-sm-6">
+                    <div class="ud-single-team wow fadeInUp" data-wow-delay=".15s">
+                        <div class="ud-team-image-wrapper">
+                            <div class="ud-team-image"><img src="assets/images/team/gianlucamarderte.png" alt="Gianluca Mardente" /></div>
+                            <img src="assets/images/team/dotted-shape.svg" alt="shape" class="shape shape-1" />
+                        </div>
+                        <div class="ud-team-info">
+                            <h5>Gianluca Mardente</h5>
+                            <h6>Founder and CTO</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-sm-6">
+                    <div class="ud-single-team wow fadeInUp" data-wow-delay=".15s">
+                        <div class="ud-team-image-wrapper">
+                            <div class="ud-team-image"><img src="assets/images/team/Eleni-Grosdouli-sveltos2.png" alt="Eleni Grosdouli" /></div>
+                            <img src="assets/images/team/dotted-shape.svg" alt="shape" class="shape shape-1" />
+                        </div>
+                        <div class="ud-team-info">
+                            <h5>Eleni Grosdouli</h5>
+                            <h6>Chief Customer Experience Officer</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== Team End ====== -->
+
+    <!-- ====== Contact Start ====== -->
+    <section id="contact" class="ud-contact">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-8 col-lg-7">
+                    <div class="ud-contact-content-wrapper">
+                        <div class="ud-contact-title">
+                            <span>CONTACT US</span>
+                            <h2>We'd Love to Hear From You!</h2>
+                        </div>
+                        <div class="ud-contact-info-wrapper">
+                            <div class="ud-single-info">
+                                <div class="ud-info-icon"><i class="lni lni-map-marker"></i></div>
+                                <div class="ud-info-meta">
+                                    <h5>Our Location</h5>
+                                    <p>San Francisco, California</p>
+                                </div>
+                            </div>
+                            <div class="ud-single-info">
+                                <div class="ud-info-icon"><i class="lni lni-envelope"></i></div>
+                                <div class="ud-info-meta">
+                                    <h5>Get in Touch</h5>
+                                    <p>Send us a message</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-5">
+                    <div class="ud-contact-form-wrapper wow fadeInUp" data-wow-delay=".2s">
+                        <h3 class="ud-contact-form-title">Send us a Message</h3>
+                        <form action="https://formspree.io/f/mkgnbvwv" method="POST" class="ud-contact-form">
+                            <div class="ud-form-group">
+                                <label for="fullName">Full Name*</label>
+                                <input type="text" name="fullName" placeholder="Your Name" required />
+                            </div>
+                            <div class="ud-form-group">
+                                <label for="email">Email*</label>
+                                <input type="email" name="email" placeholder="example@yourmail.com" required />
+                            </div>
+                            <div class="ud-form-group">
+                                <label for="phone">Phone*</label>
+                                <input type="text" name="phone" placeholder="+1 234 567 8901" required />
+                            </div>
+                            <div class="ud-form-group">
+                                <label for="message">Message*</label>
+                                <textarea name="message" rows="1" placeholder="Type your message here" required></textarea>
+                            </div>
+                            <div class="ud-form-group mb-0">
+                                <button type="submit" class="ud-main-btn">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== Contact End ====== -->
+
+    <!-- ====== Footer Start ====== -->
+    <footer class="ud-footer">
+        <div class="ud-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <ul class="ud-footer-bottom-left">
+                            <li><a href="https://github.com/k8s-cleaner/contributing">Contribute</a></li>
+                            <li><a href="https://join.slack.com/t/k8s-cleaner/shared_invite/xyz">Join Slack</a></li>
+                            <li><a href="https://twitter.com/k8s-cleaner">Follow Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="ud-footer-bottom-right">Made with ❤️ by the K8s Cleaner Team</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ====== Footer End ====== -->
+
+    <!-- ====== Back To Top Start ====== -->
+    <a href="javascript:void(0)" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
+    <!-- ====== Back To Top End ====== -->
+
+    <!-- ====== All Javascript Files ====== -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Smooth scroll for menu links
+        const pageLink = document.querySelectorAll(".ud-menu-scroll");
+        pageLink.forEach((elem) => {
+            elem.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.querySelector(elem.getAttribute("href")).scrollIntoView({ behavior: "smooth", offsetTop: 1 - 60 });
+            });
+        });
+
+        // Section menu active function
+        function onScroll(event) {
+            const sections = document.querySelectorAll(".ud-menu-scroll");
+            const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+            for (let i = 0; i < sections.length; i++) {
+                const currLink = sections[i];
+                const val = currLink.getAttribute("href");
+                const refElement = document.querySelector(val);
+                const scrollTopMinus = scrollPos + 73;
+                if (refElement.offsetTop <= scrollTopMinus && refElement.offsetTop + refElement.offsetHeight > scrollTopMinus) {
+                    document.querySelector(".ud-menu-scroll").classList.remove("active");
+                    currLink.classList.add("active");
+                } else {
+                    currLink.classList.remove("active");
+                }
+            }
+        }
+        window.document.addEventListener("scroll", onScroll);
+    </script>
+</body>
+</html>
