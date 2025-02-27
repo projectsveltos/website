@@ -19,12 +19,16 @@
       /* Custom Styles for Whitepaper Content */
       .ud-whitepaper-details-content {
         background: #fff;
+        max-width: 800px; /* Limit width for centering */
+        margin: 0 auto; /* Center the content horizontally */
+        padding: 40px 20px; /* Add padding for readability */
       }
 
       .ud-whitepaper-details-content h1, .ud-whitepaper-details-content h2, .ud-whitepaper-details-content h3, .ud-whitepaper-details-content h4 {
         font-weight: 700;
         color: #2c3e50;
         margin-bottom: 1rem;
+        text-align: center; /* Center headings */
       }
 
       .ud-whitepaper-details-content h1 {
@@ -46,6 +50,7 @@
       .ud-whitepaper-details-content p, .ud-whitepaper-details-content ul, .ud-whitepaper-details-content ol {
         margin-bottom: 0.8rem; /* Reduced white space between paragraphs */
         color: #555;
+        text-align: left; /* Left-align text for readability */
       }
 
       .ud-whitepaper-details-content ul, .ud-whitepaper-details-content ol {
@@ -60,9 +65,10 @@
         background: #f8f9fa;
         padding: 20px;
         border-left: 5px solid #007bff;
-        margin: 1.5rem 0;
+        margin: 1.5rem auto; /* Center the callout */
         border-radius: 5px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 100%; /* Ensure it doesn’t exceed container width */
       }
 
       .ud-whitepaper-details-content .ud-whitepaper-callout p {
@@ -70,6 +76,14 @@
         font-size: 1.1rem;
         color: #2c3e50;
         font-weight: 500;
+        text-align: left; /* Left-align callout text */
+      }
+
+      .ud-whitepaper-details-content a.ud-main-btn {
+        display: block; /* Make the button a block element */
+        margin: 1.5rem auto; /* Center the button */
+        text-align: center; /* Center button text */
+        max-width: 200px; /* Limit button width for aesthetics */
       }
 
       /* Banner Styling */
@@ -85,10 +99,29 @@
         margin-bottom: 1rem;
       }
 
+      /* Footer Styling */
+      .ud-footer {
+        text-align: center;
+      }
+
+      .ud-footer .container {
+        max-width: 800px; /* Match whitepaper content width */
+      }
+
+      .ud-footer .ud-footer-bottom-left, .ud-footer .ud-footer-bottom-right {
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+      }
+
       /* Responsive Design */
       @media (max-width: 768px) {
         .ud-page-banner, .ud-whitepaper-details-content {
           padding: 60px 0;
+        }
+
+        .ud-whitepaper-details-content {
+          padding: 20px 15px; /* Reduce padding on mobile */
         }
 
         .ud-whitepaper-details-content h1 {
@@ -109,6 +142,14 @@
 
         .ud-whitepaper-details-content p, .ud-whitepaper-details-content ul, .ud-whitepaper-details-content ol, .ud-whitepaper-details-content li {
           margin-bottom: 0.6rem;
+        }
+
+        .ud-whitepaper-details-content .ud-whitepaper-callout {
+          margin: 1rem auto; /* Adjust callout margin on mobile */
+        }
+
+        .ud-whitepaper-details-content a.ud-main-btn {
+          margin: 1rem auto; /* Adjust button margin on mobile */
         }
       }
     </style>
@@ -136,11 +177,11 @@
             <!-- Removed the ud-whitepaper-details-image and ud-whitepaper-overlay sections -->
           </div>
 
-          <div class="col-lg-8">
+          <div class="col-lg-12"> <!-- Changed from col-lg-8 to center content -->
             <div class="ud-whitepaper-details-content">
               <h2 class="ud-whitepaper-details-title">Streamlining Kubernetes Multi-Cluster Management with Sveltos</h2>
               <p>A Whitepaper on Automating, Securing, and Scaling Your Kubernetes Environment</p>
-             
+              <a href="https://projectsveltos.github.io/sveltos/" class="ud-main-btn ud-link-btn">Get Started with Sveltos</a>
 
               <h3>Executive Summary</h3>
               <p>In today’s fast-evolving digital landscape, organizations rely on Kubernetes to power scalable, resilient applications across on-premises, cloud, and hybrid environments. However, managing multiple Kubernetes clusters introduces complexity—manual configurations, inconsistent policies, and security vulnerabilities threaten operational efficiency and innovation. Sveltos, a Kubernetes-native add-on controller, offers a transformative solution by automating and centralizing the management of add-ons, policies, and security configurations. This whitepaper explores how Sveltos addresses multi-cluster challenges, delivers measurable benefits, and positions organizations for long-term success.</p>
@@ -193,16 +234,60 @@
               <p>Sveltos offers a strategic advantage—streamlining operations, bolstering security, and enabling scalability. Its lightweight, native design ensures rapid integration and immediate ROI.</p>
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="ud-whitepaper-sidebar">
-              <!-- Removed the ud-newsletter-box section -->
-            </div>
-          </div>
         </div>
       </div>
     </section>
     <!-- ====== Whitepaper Details End ====== -->
 
+    <!-- ====== Footer Start ====== -->
+    <footer class="ud-footer wow fadeInUp" data-wow-delay=".15s">
+      <div class="shape shape-1">
+        <img src="assets/images/footer/shape-1.svg" alt="shape" />
+      </div>
+      <div class="shape shape-2">
+        <img src="assets/images/footer/shape-2.svg" alt="shape" />
+      </div>
+      <div class="shape shape-3">
+        <img src="assets/images/footer/shape-3.svg" alt="shape" />
+      </div>
+      <div class="ud-footer-widgets">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="ud-widget text-center">
+                <a href="index.html" class="ud-footer-logo">
+                  <span class="fw-bold text-white startup-logo">Project Sveltos</span>
+                </a>
+                <p class="ud-widget-desc">We simplify Kubernetes multi-cluster management with automation and security.</p>
+                <ul class="ud-widget-socials d-flex justify-content-center">
+                  <li><a href="https://twitter.com/projectsveltos"><i class="lni lni-twitter-filled"></i></a></li>
+                  <li><a href="https://github.com/projectsveltos"><i class="lni lni-github-original"></i></a></li>
+                  <li><a href="https://www.linkedin.com/company/projectsveltos"><i class="lni lni-linkedin-original"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ud-footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <ul class="ud-footer-bottom-left text-center">
+                <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                <li><a href="javascript:void(0)">Support Policy</a></li>
+                <li><a href="javascript:void(0)">Terms of Service</a></li>
+              </ul>
+              <p class="ud-footer-bottom-right text-center">
+                Designed and Developed by
+                <a href="https://projectsveltos.io" rel="nofollow">Project Sveltos</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- ====== Footer End ====== -->
 
     <!-- ====== Back To Top Start ====== -->
     <a href="javascript:void(0)" class="back-to-top">
