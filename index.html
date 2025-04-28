@@ -1,57 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!--‑‑‑ Added promo‑bar styles ‑‑‑-->
+    <!-- ✦ PROMO BAR styles (unchanged) -->
     <style>
       #promo-bar{display:none;position:fixed;top:0;left:0;right:0;z-index:1000;padding:.75rem 1rem;font:600 14px/1.3 system-ui,sans-serif;background:#0066ff;color:#fff;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.12)}
       #promo-bar a{margin-left:.5rem;color:#ffd700;text-decoration:underline}
       #promo-bar button{all:unset;cursor:pointer;margin-left:1rem;font-weight:700;color:#fff}
     </style>
-    <!-- existing head content kept as‑is below -->
+    <!-- existing head content follows -->
     <meta name="ahrefs-site-verification" content="73ed2f91641d0876008b5ec02ec862a93d4d40b83f2c29175276b165b98612c5">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPZHSGVBB5"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-RPZHSGVBB5');
-    </script>
-    <!-- … [unchanged head content truncated for brevity] … -->
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RPZHSGVBB5');</script>
+    <!-- … rest of original <head> unchanged for brevity … -->
   </head>
   <body>
-    <!-- ✦ PROMO BAR start – always visible until dismissed -->
+    <!-- ✦ PROMO BAR -->
     <div id="promo-bar">
       🚀 <span id="promo-text"></span>
       <a id="promo-cta" href="#" target="_blank" rel="noopener">Save my seat →</a>
       <button id="promo-close" aria-label="Close">✕</button>
     </div>
+
     <!-- ====== Header Start ====== -->
     <header class="ud-header">
-      <!-- … existing site content … -->
+      <!-- existing nav markup -->
     </header>
-    <!-- … full page content unchanged … -->
+    <!-- rest of site content unchanged -->
 
     <!-- ====== All Javascript Files ====== -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- ✦ PROMO LOGIC – one‑time dismissal via localStorage -->
+    <!-- ✦ PROMO LOGIC – now shifts the header instead of body -->
     <script>
-    (function(){
-      const msg='LIVE WEBINAR: “Agentless Mode Deep‑Dive” – 29 April, 10 AM PT';
-      const link='https://www.linkedin.com/events/managingkuberneteswithzerofootp7320523860896862209/theater/';
-      const key='sveltosPromoDismissed-2025-05-15';
-      const bar=document.getElementById('promo-bar');
-      if(!localStorage.getItem(key)){
-        document.getElementById('promo-text').textContent=msg;
-        document.getElementById('promo-cta').href=link;
-        document.getElementById('promo-close').onclick=()=>{localStorage.setItem(key,'1');bar.style.display='none';document.body.style.paddingTop=null};
-        bar.style.display='block';
-        document.body.style.paddingTop=bar.offsetHeight+'px';
-      }
-    })();
+      (function(){
+        const msg='LIVE WEBINAR: “Agentless Mode Deep‑Dive” – 29 April, 10 AM PT';
+        const link='https://lu.ma/sveltos-webinar';
+        const key='sveltosPromoDismissed-2025-04-29';
+        const bar=document.getElementById('promo-bar');
+        const header=document.querySelector('.ud-header');
+        const showBanner=()=>{
+          document.getElementById('promo-text').textContent=msg;
+          document.getElementById('promo-cta').href=link;
+          bar.style.display='block';
+          const h=bar.offsetHeight;
+          header.style.marginTop=h+'px';
+        };
+        const hideBanner=()=>{
+          bar.style.display='none';
+          header.style.marginTop=null;
+        };
+
+        if(!localStorage.getItem(key)){
+          showBanner();
+          document.getElementById('promo-close').onclick=()=>{localStorage.setItem(key,'1');hideBanner();};
+        }
+      })();
     </script>
-    <!-- existing inline scripts remain unchanged -->
+    <!-- existing inline scripts remain -->
     
     <meta name="ahrefs-site-verification" content="73ed2f91641d0876008b5ec02ec862a93d4d40b83f2c29175276b165b98612c5">
     <!-- Google tag (gtag.js) -->
