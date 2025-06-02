@@ -770,12 +770,11 @@ p {
   line-height: 24px;
   margin-bottom: 40px;
 }
-<style>
-  .ud-single-feature .ud-feature-desc span {
-    display: block;
-    margin-bottom: 8px; /* Adds space between sentences */
-  }
-</style>
+
+.ud-single-feature .ud-feature-desc span {
+  display: block;
+  margin-bottom: 8px;
+}
 
 .ud-single-feature .ud-feature-link {
   font-weight: 500;
@@ -2613,4 +2612,37 @@ p {
     padding: 10px 20px;
   }
 }
-/*# sourceMappingURL=ud-styles.css.map */
+
+.ud-blog-details-content p,
+.ud-blog-details-content ul,
+.ud-blog-details-content ol,
+.ud-blog-details-content h2,
+.ud-blog-details-content h3,
+.ud-blog-details-content h4,
+.ud-blog-details-content h5,
+.ud-blog-details-content h6 {
+  margin-bottom: 22px;
+}
+
+.ud-blog-details-content ul,
+.ud-blog-details-content ol {
+  padding-left: 24px;
+  list-style-type: disc;
+}
+
+.ud-blog-details-content li {
+  margin-bottom: 10px;
+}
+
+.ud-blog-details-content table {
+  margin-bottom: 24px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ud-blog-details-content table th,
+.ud-blog-details-content table td {
+  border: 1px solid #e0e0e0;
+  padding: 8px 12px;
+  text-align: left;
+}
