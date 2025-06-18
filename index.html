@@ -678,134 +678,131 @@
         margin-bottom: 0;
       }
 
-      /* Feature description card styling */
-      .feature-description-card {
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        border-radius: 12px;
-        padding: 24px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        border: 1px solid rgba(0, 0, 0, 0.05);
+      /* Enhanced feature card styling */
+      .feature-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 32px 24px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s ease;
+        height: 100%;
         position: relative;
         overflow: hidden;
-        animation: cardEntrance 0.8s ease-out forwards;
-        opacity: 0;
-        transform: translateY(30px);
       }
 
-      @keyframes cardEntrance {
-        0% {
-          opacity: 0;
-          transform: translateY(30px) scale(0.95);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-        }
+      /* Core Features - Unified card theme */
+      .core-features .feature-card,
+      .advanced-features .feature-card,
+      .tooling-ui .feature-card,
+      .integration-extensibility .feature-card {
+        background: #f8fafc;
+        border-color: #e2e8f0;
       }
 
-      .feature-description-card::before {
+      .feature-card .ud-feature-title {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.4;
+        margin-bottom: 16px;
+        color: #1e293b;
+        transition: color 0.3s ease;
+      }
+
+      .feature-card:hover .ud-feature-title {
+        color: #2563eb;
+      }
+
+      .feature-card .ud-feature-list {
+        margin-top: 16px;
+      }
+
+      .feature-card .ud-feature-list li {
+        font-size: 15px;
+        line-height: 1.7;
+        color: #64748b;
+        margin-bottom: 10px;
+        transition: color 0.3s ease;
+      }
+
+      .feature-card:hover .ud-feature-list li {
+        color: #475569;
+      }
+
+      .feature-card .ud-feature-list li:before {
+        font-size: 16px;
+        color: var(--ud-primary-color);
+        transition: all 0.3s ease;
+      }
+
+      .feature-card:hover .ud-feature-list li:before {
+        color: var(--ud-primary-color);
+        transform: scale(1.2);
+      }
+
+      /* Section spacing improvements */
+      .ud-features {
+        padding: 80px 0 120px 0;
+      }
+
+      /* Enhanced section headers */
+      .section-header {
+        text-align: center;
+        margin-bottom: 10px;
+        position: relative;
+        padding-bottom: 20px;
+      }
+
+      .section-header::after {
         content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
         height: 3px;
         background: linear-gradient(90deg, var(--ud-primary-color), #6366f1);
-        animation: borderSlide 1s ease-out 0.3s forwards;
-        transform: scaleX(0);
-        transform-origin: left;
+        border-radius: 2px;
       }
 
-      @keyframes borderSlide {
-        0% {
-          transform: scaleX(0);
-        }
-        100% {
-          transform: scaleX(1);
-        }
-      }
-
-      .feature-description-card h4 {
-        margin-bottom: 16px;
-        font-size: 18px;
-        font-weight: 600;
-        animation: textFadeIn 0.6s ease-out 0.4s forwards;
-        opacity: 0;
-      }
-
-      .feature-description-card p {
-        margin-bottom: 12px;
-        line-height: 1.7;
-        color: #374151;
-        font-size: 15px;
-        animation: textFadeIn 0.6s ease-out 0.6s forwards;
-        opacity: 0;
-      }
-
-      .feature-description-card p:nth-child(3) {
-        animation-delay: 0.8s;
-      }
-
-      @keyframes textFadeIn {
-        0% {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .feature-description-card p:last-child {
-        margin-bottom: 0;
-      }
-
-      .feature-description-card strong {
+      .section-header h3 {
+        font-size: 32px;
+        font-weight: 700;
         color: var(--ud-primary-color);
-        font-weight: 600;
-        animation: highlightPulse 2s ease-in-out 1.2s infinite;
+        margin-bottom: 8px;
+        letter-spacing: -0.025em;
       }
 
-      @keyframes highlightPulse {
-        0%, 100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.8;
-        }
+      .section-header p {
+        font-size: 18px;
+        color: #64748b;
+        margin: 0;
       }
 
-      /* Responsive design */
+      /* Increased spacing between sections */
+      .ud-features .row.mb-5.mt-5 {
+        margin-top: 80px !important;
+        margin-bottom: 80px !important;
+      }
+
+      /* Responsive improvements */
       @media (max-width: 768px) {
-        .timeline {
-          flex-direction: column;
-          margin: 0;
-        }
-
-        .timeline::before {
-          top: 0;
-          left: 50%;
-          width: 4px;
-          height: 100%;
-          transform: translateX(-50%);
-        }
-
-        .event {
-          width: 100%;
-          margin-bottom: 60px;
-        }
-
-        .event:last-child {
-          margin-bottom: 0;
-        }
-
-        .content {
+        .feature-card {
+          padding: 24px 20px;
           margin-bottom: 20px;
         }
-
-        .circle {
-          margin: 20px auto 0;
+        
+        .feature-card .ud-feature-icon {
+          padding: 16px;
+          margin-bottom: 20px;
+        }
+        
+        .feature-card .ud-feature-icon i {
+          font-size: 28px;
+        }
+        
+        .feature-card .ud-feature-title {
+          font-size: 18px;
         }
       }
     </style>
@@ -933,7 +930,7 @@
     </section>
     <!-- ====== Hero End ====== -->
 
-    <!-- ====== Features Start ====== -->
+     <!-- ====== Features Start ====== -->
     <section id="features" class="ud-features">
       <div class="container">
         <div class="row">
@@ -953,14 +950,17 @@
         <!-- Core Features -->
         <div class="row mb-5">
           <div class="col-lg-12">
-            <h3 class="text-center mb-4" style="color: var(--ud-primary-color);">Sveltos Core Features</h3>
+            <div class="section-header">
+              <h3>Sveltos Core Features</h3>
+              <p>Essential capabilities for multi-cluster management</p>
+            </div>
           </div>
         </div>
 
-        <div class="row">
+        <div class="row g-4 core-features">
           <!-- Kubernetes Add-on Management -->
           <div class="col-xl-4 col-lg-4 col-sm-6">
-            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".1s">
+            <div class="ud-single-feature feature-card wow fadeInUp" data-wow-delay=".1s">
               <div class="ud-feature-icon">
                 <i class="lni lni-network"></i>
               </div>
@@ -977,7 +977,7 @@
 
           <!-- Multiple Add-on Format Support -->
           <div class="col-xl-4 col-lg-4 col-sm-6">
-            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".15s">
+            <div class="ud-single-feature feature-card wow fadeInUp" data-wow-delay=".15s">
               <div class="ud-feature-icon">
                 <i class="lni lni-files"></i>
               </div>
@@ -996,7 +996,7 @@
 
           <!-- Profile & ClusterProfile System -->
           <div class="col-xl-4 col-lg-4 col-sm-6">
-            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".2s">
+            <div class="ud-single-feature feature-card wow fadeInUp" data-wow-delay=".2s">
               <div class="ud-feature-icon">
                 <i class="lni lni-cog"></i>
               </div>
@@ -1013,16 +1013,19 @@
         </div>
 
         <!-- Advanced Features -->
-        <div class="row mb-5">
+        <div class="row mb-5 mt-5">
           <div class="col-lg-12">
-            <h3 class="text-center mb-4" style="color: var(--ud-primary-color);">Advanced Features</h3>
+            <div class="section-header">
+              <h3>Advanced Features</h3>
+              <p>Powerful capabilities for complex deployments</p>
+            </div>
           </div>
         </div>
 
-        <div class="row">
+        <div class="row g-4 advanced-features">
           <!-- Sync Modes -->
           <div class="col-xl-4 col-lg-4 col-sm-6">
-            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".25s">
+            <div class="ud-single-feature feature-card wow fadeInUp" data-wow-delay=".25s">
               <div class="ud-feature-icon">
                 <i class="lni lni-arrows-vertical"></i>
               </div>
@@ -1039,7 +1042,7 @@
 
           <!-- Configuration Drift Detection & Recovery -->
           <div class="col-xl-4 col-lg-4 col-sm-6">
-            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".3s">
+            <div class="ud-single-feature feature-card wow fadeInUp" data-wow-delay=".3s">
               <div class="ud-feature-icon">
                 <i class="lni lni-shield"></i>
               </div>
@@ -1056,7 +1059,7 @@
 
           <!-- Dynamic Cluster Classification -->
           <div class="col-xl-4 col-lg-4 col-sm-6">
-            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".35s">
+            <div class="ud-single-feature feature-card wow fadeInUp" data-wow-delay=".35s">
               <div class="ud-feature-icon">
                 <i class="lni lni-target"></i>
               </div>
@@ -1072,10 +1075,10 @@
           </div>
         </div>
 
-        <div class="row">
+        <div class="row g-4 mt-4 advanced-features">
           <!-- Event-Driven Framework -->
           <div class="col-xl-4 col-lg-4 col-sm-6">
-            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".4s">
+            <div class="ud-single-feature feature-card wow fadeInUp" data-wow-delay=".4s">
               <div class="ud-feature-icon">
                 <i class="lni lni-bolt"></i>
               </div>
@@ -1093,7 +1096,7 @@
 
           <!-- Health Monitoring -->
           <div class="col-xl-4 col-lg-4 col-sm-6">
-            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".45s">
+            <div class="ud-single-feature feature-card wow fadeInUp" data-wow-delay=".45s">
               <div class="ud-feature-icon">
                 <i class="lni lni-heart"></i>
               </div>
@@ -1110,7 +1113,7 @@
 
           <!-- Templating and Configuration Flexibility -->
           <div class="col-xl-4 col-lg-4 col-sm-6">
-            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".5s">
+            <div class="ud-single-feature feature-card wow fadeInUp" data-wow-delay=".5s">
               <div class="ud-feature-icon">
                 <i class="lni lni-code"></i>
               </div>
@@ -1127,16 +1130,19 @@
         </div>
 
         <!-- Tooling & UI -->
-        <div class="row mb-5">
+        <div class="row mb-5 mt-5">
           <div class="col-lg-12">
-            <h3 class="text-center mb-4" style="color: var(--ud-primary-color);">Tooling & UI</h3>
+            <div class="section-header">
+              <h3>Tooling & UI</h3>
+              <p>User-friendly interfaces and management tools</p>
+            </div>
           </div>
         </div>
 
-        <div class="row">
+        <div class="row g-4 tooling-ui">
           <!-- Dashboard & UI -->
           <div class="col-xl-4 col-lg-4 col-sm-6">
-            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".55s">
+            <div class="ud-single-feature feature-card wow fadeInUp" data-wow-delay=".55s">
               <div class="ud-feature-icon">
                 <i class="lni lni-dashboard"></i>
               </div>
@@ -1153,7 +1159,7 @@
 
           <!-- CLI Tool -->
           <div class="col-xl-4 col-lg-4 col-sm-6">
-            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".6s">
+            <div class="ud-single-feature feature-card wow fadeInUp" data-wow-delay=".6s">
               <div class="ud-feature-icon">
                 <i class="lni lni-control-panel"></i>
               </div>
@@ -1170,7 +1176,7 @@
 
           <!-- Sharding Support -->
           <div class="col-xl-4 col-lg-4 col-sm-6">
-            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".65s">
+            <div class="ud-single-feature feature-card wow fadeInUp" data-wow-delay=".65s">
               <div class="ud-feature-icon">
                 <i class="lni lni-layers"></i>
               </div>
@@ -1186,16 +1192,19 @@
         </div>
 
         <!-- Integration & Extensibility -->
-        <div class="row mb-5">
+        <div class="row mb-5 mt-5">
           <div class="col-lg-12">
-            <h3 class="text-center mb-4" style="color: var(--ud-primary-color);">Integration & Extensibility</h3>
+            <div class="section-header">
+              <h3>Integration & Extensibility</h3>
+              <p>Extend and integrate with your existing ecosystem</p>
+            </div>
           </div>
         </div>
 
-        <div class="row">
+        <div class="row g-4 integration-extensibility">
           <!-- Multi-tenancy Support -->
           <div class="col-xl-4 col-lg-4 col-sm-6">
-            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".7s">
+            <div class="ud-single-feature feature-card wow fadeInUp" data-wow-delay=".7s">
               <div class="ud-feature-icon">
                 <i class="lni lni-users"></i>
               </div>
@@ -1212,7 +1221,7 @@
 
           <!-- Custom Event Support with Lua -->
           <div class="col-xl-4 col-lg-4 col-sm-6">
-            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".75s">
+            <div class="ud-single-feature feature-card wow fadeInUp" data-wow-delay=".75s">
               <div class="ud-feature-icon">
                 <i class="lni lni-code-alt"></i>
               </div>
@@ -1229,7 +1238,7 @@
 
           <!-- ClusterAPI Integration -->
           <div class="col-xl-4 col-lg-4 col-sm-6">
-            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".8s">
+            <div class="ud-single-feature feature-card wow fadeInUp" data-wow-delay=".8s">
               <div class="ud-feature-icon">
                 <i class="lni lni-network"></i>
               </div>
