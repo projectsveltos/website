@@ -1098,6 +1098,8 @@ p {
 /* ===== Testimonials CSS ===== */
 .ud-testimonials {
   padding-top: 120px;
+  padding-bottom: 80px;
+  background: #f3f4fe;
 }
 
 @media (max-width: 767px) {
