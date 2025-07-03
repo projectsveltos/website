@@ -1163,6 +1163,19 @@ p {
   margin-bottom: 30px;
 }
 
+/* ===== Brands CSS ===== */
+.ud-brands {
+  padding-top: 120px;
+  padding-bottom: 80px;
+  background: #f8f9fa;
+}
+
+@media (max-width: 767px) {
+  .ud-brands {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+}
 .ud-brands .ud-title h6 {
   font-weight: normal;
   font-size: 12px;
