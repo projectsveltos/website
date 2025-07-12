@@ -875,9 +875,10 @@ ding<!DOCTYPE html>
 
 <!-- Toggle Switch -->
 <div id="modeToggleContainer">
+  <div class="label">Marketing ON</div>
   <label class="switch">
     <input type="checkbox" id="modeToggle" checked>
-    <span class="slider">Marketing Mode ON</span>
+    <span class="knob"></span>
   </label>
 </div>
 
@@ -888,6 +889,14 @@ ding<!DOCTYPE html>
     right: 20px;
     z-index: 9999;
     font-family: sans-serif;
+    text-align: center;
+  }
+
+  .label {
+    color: #4b3a6a;
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-size: 14px;
   }
 
   .switch {
@@ -906,18 +915,7 @@ ding<!DOCTYPE html>
     height: 0;
   }
 
-  .slider {
-    position: absolute;
-    top: 8px;
-    left: 12px;
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-    pointer-events: none;
-  }
-
-  .switch::before {
-    content: "";
+  .knob {
     position: absolute;
     height: 28px;
     width: 28px;
@@ -928,11 +926,7 @@ ding<!DOCTYPE html>
     transition: transform 0.3s ease-in-out;
   }
 
-  input:checked + .slider {
-    left: 14px;
-  }
-
-  input:checked ~ .switch::before {
+  .switch input:checked + .knob {
     transform: translateX(-40px);
   }
 </style>
@@ -942,17 +936,6 @@ ding<!DOCTYPE html>
 
   toggle.addEventListener('change', () => {
     if (toggle.checked) {
-      window.location.href = "https://sveltos.projectsveltos.io/";
-    } else {
-      window.location.href = "https://projectsveltos.github.io/sveltos/latest/";
-    }
-  });
-</script>
-
-<!-- Toggle Script -->
-<script>
-  document.getElementById('modeToggle').addEventListener('change', function () {
-    if (this.checked) {
       window.location.href = "https://sveltos.projectsveltos.io/";
     } else {
       window.location.href = "https://projectsveltos.github.io/sveltos/latest/";
