@@ -873,15 +873,29 @@
     </header>
     <!-- ====== Header End ====== -->
 
-<!-- Toggle Switch Container -->
+<!-- Toggle Switch -->
 <div class="fixed top-4 right-4 z-50">
-  <label class="relative inline-flex items-center cursor-pointer">
-    <input type="checkbox" id="modeToggle" class="sr-only peer" checked>
-    <div class="w-14 h-8 bg-purple-800 rounded-full peer peer-checked:bg-purple-700 transition-colors duration-300"></div>
-    <div class="absolute left-1 top-1 bg-white w-6 h-6 rounded-full shadow-md transform peer-checked:translate-x-6 transition-transform duration-300"></div>
-    <span class="absolute left-4 top-2 text-xs font-bold text-white pointer-events-none peer-checked:left-1">ON</span>
+  <label class="relative inline-block w-20 h-10 rounded-full bg-purple-900 text-white font-semibold text-sm cursor-pointer select-none">
+    <input type="checkbox" id="modeToggle" class="sr-only peer" checked />
+    <span
+      class="absolute top-1.5 left-2 peer-checked:left-9 transition-all duration-300 w-7 h-7 rounded-full bg-white"
+    ></span>
+    <span
+      class="absolute top-2 left-5 peer-checked:left-2 transition-all duration-300 z-10"
+    >ON</span>
   </label>
 </div>
+
+<!-- Toggle Script -->
+<script>
+  document.getElementById('modeToggle').addEventListener('change', function () {
+    if (this.checked) {
+      window.location.href = "https://sveltos.projectsveltos.io/";
+    } else {
+      window.location.href = "https://projectsveltos.github.io/sveltos/latest/";
+    }
+  });
+</script>
     
       <!-- ====== Hero Start ====== -->
     <section class="ud-hero" id="home">
@@ -2034,8 +2048,8 @@
     <!-- ✦ PROMO LOGIC – now shifts the header instead of body -->
     <script>
       (function(){
-        const msg='LIVE WEBINAR: “Introducing Pull Mode - No more inbound access required” – Wed, Jul 9, 10 AM PT';
-        const link='https://www.linkedin.com/events/introducingpullmodeforsveltos7341867811473866752/comments/';
+        const msg='LIVE WEBINAR: “Introducing Pull Mode - No more inbound access required” – Recording';
+        const link='https://www.youtube.com/watch?v=Y3dW5XYjg5I&t=2s&ab_channel=ProjectSveltos';
         const key='sveltosPromoDismissed-2025-04-29';
         const bar=document.getElementById('promo-bar');
         const header=document.querySelector('.ud-header');
@@ -2058,19 +2072,6 @@
       })();
     </script>
     <!-- existing inline scripts remain -->
-
-    <script>
-  document.getElementById('modeToggle').addEventListener('change', function () {
-    const isChecked = this.checked;
-
-    // Navigate to the other page
-    if (isChecked) {
-      window.location.href = "https://sveltos.projectsveltos.io/";
-    } else {
-      window.location.href = "https://projectsveltos.github.io/sveltos/latest/";
-    }
-  });
-</script>
     
   </body>
 </html>
