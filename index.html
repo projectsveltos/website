@@ -805,6 +805,63 @@
           font-size: 18px;
         }
       }
+       /* Mode Toggle Button Styles */
+      .modeToggle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        z-index: 10;
+        border: none;
+        background: transparent;
+        padding: 0;
+        transition: transform 0.3s ease;
+      }
+
+      .modeToggle:hover {
+        transform: scale(1.1);
+      }
+
+      .modeToggle img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .modeToggle img.off {
+        opacity: 0;
+      }
+
+      .modeToggle.active img.on {
+        opacity: 0;
+      }
+
+      .modeToggle.active img.off {
+        opacity: 1;
+      }
+
+      /* Hero content positioning to accommodate toggle */
+      .ud-hero-content {
+        position: relative;
+        padding-right: 80px;
+      }
+
+      @media (max-width: 768px) {
+        .modeToggle {
+          width: 50px;
+          height: 50px;
+        }
+        
+        .ud-hero-content {
+          padding-right: 60px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -881,6 +938,10 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="ud-hero-content wow fadeInUp" data-wow-delay=".2s">
+              <button class="modeToggle" id="modeToggle">
+                <img src="assets/images/on.png" alt="On" class="on">
+                <img src="assets/images/off.png" alt="Off" class="off">
+              </button>
               <h1 class="ud-hero-title">
                 Transforming your fleet of Kubernetes clusters into a resilient, secure, and scalable platform
               </h1>
@@ -2005,6 +2066,20 @@
       }
 
       window.document.addEventListener("scroll", onScroll);
+      // Mode Toggle Functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const modeToggle = document.getElementById('modeToggle');
+        
+        if (modeToggle) {
+          modeToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            
+            // You can add additional functionality here later
+            // For example, triggering theme changes or other features
+            console.log('Mode toggle clicked. Active:', this.classList.contains('active'));
+          });
+        }
+      });
     </script>
     
     <!-- Start of OpenWidget (www.openwidget.com) code -->
