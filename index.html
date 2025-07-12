@@ -2066,7 +2066,18 @@
       }
 
       window.document.addEventListener("scroll", onScroll);
-      
+     // Mode Toggle Functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const modeToggle = document.getElementById('modeToggle');
+        
+        if (modeToggle) {
+          modeToggle.addEventListener('click', function() {
+            // Simple toggle without preventing default behavior
+            this.classList.toggle('active');
+            console.log('Mode toggle clicked. Active:', this.classList.contains('active'));
+          });
+        }
+      });
     </script>
     
     <!-- Start of OpenWidget (www.openwidget.com) code -->
