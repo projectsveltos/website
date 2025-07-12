@@ -2066,18 +2066,15 @@
       }
 
       window.document.addEventListener("scroll", onScroll);
-     // Mode Toggle Functionality - Using mouseenter/mouseleave for visual toggle
+     // Mode Toggle Functionality - Using click for visual toggle
       document.addEventListener('DOMContentLoaded', function() {
         const modeToggle = document.getElementById('modeToggle');
         
         if (modeToggle) {
-          // Use mouse events instead of click to avoid interfering with Picreel
-          modeToggle.addEventListener('mouseenter', function() {
-            this.classList.add('active');
-          });
-          
-          modeToggle.addEventListener('mouseleave', function() {
-            this.classList.remove('active');
+          // Use click event for visual toggle - should work with div element
+          modeToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            console.log('Mode toggle clicked. Active:', this.classList.contains('active'));
           });
         }
       });
