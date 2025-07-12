@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ding<!DOCTYPE html>
 <html lang="en">
   <head>
     <link rel="canonical" href="https://sveltos.projectsvletos.io/" />
@@ -26,7 +26,7 @@
     <!-- ✦ PROMO BAR -->
     <div id="promo-bar">
       🚀 <span id="promo-text"></span>
-      <a id="promo-cta" href="#" target="_blank" rel="noopener">Sign up →</a>
+      <a id="promo-cta" href="#" target="_blank" rel="noopener">Recording →</a>
       <button id="promo-close" aria-label="Close">✕</button>
     </div>
       
@@ -874,17 +874,80 @@
     <!-- ====== Header End ====== -->
 
 <!-- Toggle Switch -->
-<div class="fixed top-4 right-4 z-50">
-  <label class="relative inline-block w-20 h-10 rounded-full bg-purple-900 text-white font-semibold text-sm cursor-pointer select-none">
-    <input type="checkbox" id="modeToggle" class="sr-only peer" checked />
-    <span
-      class="absolute top-1.5 left-2 peer-checked:left-9 transition-all duration-300 w-7 h-7 rounded-full bg-white"
-    ></span>
-    <span
-      class="absolute top-2 left-5 peer-checked:left-2 transition-all duration-300 z-10"
-    >ON</span>
+<div id="modeToggleContainer">
+  <label class="switch">
+    <input type="checkbox" id="modeToggle" checked>
+    <span class="slider">ON</span>
   </label>
 </div>
+
+<style>
+  #modeToggleContainer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    font-family: sans-serif;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 40px;
+    background-color: #4b3a6a;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    pointer-events: none;
+  }
+
+  .switch::before {
+    content: "";
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    left: 52px;
+    top: 6px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  input:checked + .slider {
+    left: 14px;
+  }
+
+  input:checked ~ .switch::before {
+    transform: translateX(-40px);
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('modeToggle');
+
+  toggle.addEventListener('change', () => {
+    if (toggle.checked) {
+      window.location.href = "https://sveltos.projectsveltos.io/";
+    } else {
+      window.location.href = "https://projectsveltos.github.io/sveltos/latest/";
+    }
+  });
+</script>
 
 <!-- Toggle Script -->
 <script>
@@ -2048,7 +2111,7 @@
     <!-- ✦ PROMO LOGIC – now shifts the header instead of body -->
     <script>
       (function(){
-        const msg='LIVE WEBINAR: “Introducing Pull Mode - No more inbound access required” – Recording';
+        const msg='LIVE WEBINAR: “Introducing Pull Mode - No more inbound access required”';
         const link='https://www.youtube.com/watch?v=Y3dW5XYjg5I&t=2s&ab_channel=ProjectSveltos';
         const key='sveltosPromoDismissed-2025-04-29';
         const bar=document.getElementById('promo-bar');
