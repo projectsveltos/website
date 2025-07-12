@@ -876,32 +876,43 @@
 <!-- Toggle Switch -->
 <div id="modeToggleContainer">
   <div class="label">Marketing Mode</div>
-  <label class="switch">
-    <input type="checkbox" id="modeToggle" checked>
-    <span class="track"></span>
-    <span class="knob"></span>
-  </label>
+  <div class="switch-wrapper">
+    <label class="switch">
+      <input type="checkbox" id="modeToggle" checked>
+      <span class="track"></span>
+      <span class="knob"></span>
+    </label>
+  </div>
 </div>
 
 <style>
+  body {
+    margin: 0;
+    background-color: #2f52d2;
+    font-family: sans-serif;
+  }
+
   #modeToggleContainer {
     position: fixed;
     top: 80px;
     right: 40px;
     z-index: 9999;
-    font-family: sans-serif;
-    text-align: center;
+    text-align: left;
   }
 
   .label {
     color: white;
     font-weight: bold;
-    margin-bottom: 8px;
     font-size: 14px;
+    margin-bottom: 6px;
+    padding-left: 4px; /* slight nudge for visual alignment */
+  }
+
+  .switch-wrapper {
+    padding-left: 0px; /* adjust to align with "M" */
   }
 
   .switch {
-    margin: 0 auto;
     position: relative;
     display: inline-block;
     width: 90px;
@@ -935,7 +946,7 @@
   }
 
   input:checked + .track + .knob {
-    transform: translateX(50px);
+    transform: translateX(50px); /* move knob to the right */
   }
 </style>
 
