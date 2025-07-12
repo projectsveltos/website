@@ -875,9 +875,11 @@ ding<!DOCTYPE html>
 
 <!-- Toggle Switch -->
 <div id="modeToggleContainer">
-  <div class="label">Marketing ON</div>
+  <div class="label">Marketing Mode</div>
   <label class="switch">
     <input type="checkbox" id="modeToggle" checked>
+    <span class="track"></span>
+    <span class="text">ON</span>
     <span class="knob"></span>
   </label>
 </div>
@@ -904,9 +906,6 @@ ding<!DOCTYPE html>
     display: inline-block;
     width: 90px;
     height: 40px;
-    background-color: #4b3a6a;
-    border-radius: 20px;
-    cursor: pointer;
   }
 
   .switch input {
@@ -915,19 +914,44 @@ ding<!DOCTYPE html>
     height: 0;
   }
 
+  .track {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #4b3a6a;
+    border-radius: 20px;
+    transition: background-color 0.3s ease-in-out;
+  }
+
   .knob {
     position: absolute;
+    top: 6px;
+    left: 6px;
     height: 28px;
     width: 28px;
-    left: 52px;
-    top: 6px;
     background-color: white;
     border-radius: 50%;
     transition: transform 0.3s ease-in-out;
+    z-index: 2;
   }
 
-  .switch input:checked + .knob {
-    transform: translateX(-40px);
+  input:checked + .track + .text + .knob {
+    transform: translateX(50px);
+  }
+
+  .text {
+    position: absolute;
+    top: 10px;
+    left: 58px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    z-index: 3;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  input:not(:checked) + .track + .text {
+    opacity: 0;
   }
 </style>
 
