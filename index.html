@@ -2286,7 +2286,7 @@
         // Set initial state based on checkbox
         if (toggleCheckbox.checked) {
           knobText.textContent = "ON";
-          marketingText.textContent = "Marketing Mode ON";
+          marketingText.textContent = "Marketing Mode";
         } else {
           knobText.textContent = "OFF";
           marketingText.textContent = "Marketing Mode";
@@ -2296,7 +2296,7 @@
         toggleCheckbox.addEventListener('change', () => {
           if (toggleCheckbox.checked) {
             knobText.textContent = "ON";
-            marketingText.textContent = "Marketing Mode ON";
+            marketingText.textContent = "Marketing Mode";
           } else {
             knobText.textContent = "OFF";
             marketingText.textContent = "Marketing Mode";
@@ -2307,7 +2307,7 @@
               setTimeout(() => {
                 toggleCheckbox.checked = true;
                 knobText.textContent = "ON";
-                marketingText.textContent = "Marketing Mode ON";
+                marketingText.textContent = "Marketing Mode";
               }, 1000); // 1 second delay to return to ON
             }, 500); // 500ms delay to ensure the animation completes
           }
