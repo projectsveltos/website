@@ -2247,8 +2247,17 @@
       <i class="lni lni-chevron-up"> </i>
     </a>
     
-    <!-- Load Picreel after other scripts -->
-    <script src="https://app.picreel.com/assets/main.js" data-picreel="Z011ZnQ1N3J2ZER1MzYycFdpWGxIQT09" defer></script>
+    <!-- Initialize Picreel with a small delay -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          var script = document.createElement('script');
+          script.src = 'https://app.picreel.com/assets/main.js';
+          script.setAttribute('data-picreel', 'Z011ZnQ1N3J2ZER1MzYycFdpWGxIQT09');
+          document.body.appendChild(script);
+        }, 1000); // 1 second delay
+      });
+    </script>
     <!-- ====== Back To Top End ====== -->
 
     <!-- ====== All Javascript Files ====== -->
@@ -2385,4 +2394,3 @@
     
   </body>
 </html>
-
