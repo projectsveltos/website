@@ -13,46 +13,64 @@
       #promo-bar{display:none;position:fixed;top:0;left:0;right:0;z-index:1000;padding:.75rem 1rem;font:600 14px/1.3 system-ui,sans-serif;background:#0066ff;color:#fff;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.12)}
       #promo-bar a{margin-left:.5rem;color:#ffd700;text-decoration:underline}
       #promo-bar button{all:unset;cursor:pointer;margin-left:1rem;font-weight:700;color:#fff}
-/* Marketing Mode Toggle Button Styles */
+      
+      /* Marketing Mode Toggle - New Design */
       .marketing-toggle {
         position: fixed;
-        top: 100px;
-        right: 20px;
-        z-index: 1001;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        bottom: 24px;
+        left: 24px;
+        z-index: 9999;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       }
 
       .toggle-container {
-        background-color: #1a4a9c;
-        border-radius: 1.5rem;
-        padding: 1rem 1.5rem;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
+        background: #4A42EC;
+        color: #fff;
+        border-radius: 12px;
+        padding: 8px 8px 44px;
+        position: relative;
+        min-height: 70px;
+        overflow: hidden;
+        box-sizing: border-box;
+        width: 120px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        transition: all 0.2s ease;
+        cursor: pointer;
       }
 
       .toggle-container:hover {
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
         transform: translateY(-2px);
       }
 
       .toggle-label {
-        font-size: 1rem;
-        font-weight: 700;
-        color: #fff;
-        margin: 0;
-        white-space: nowrap;
+        text-align: center;
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 8px;
+        color: white;
         user-select: none;
       }
 
       .toggle-switch {
-        position: relative;
-        display: inline-block;
-        width: 3.5rem;
-        height: 1.75rem;
-        flex-shrink: 0;
+        position: absolute;
+        left: 50%;
+        bottom: 8px;
+        transform: translateX(-50%);
+        height: 28px;
+        min-width: 60px;
+        border-radius: 999px;
+        border: 2px solid #3a33d6;
+        background: #fff;
+        box-shadow: 0 1px 4px rgba(0,0,0,.1);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 12px;
+        color: #333;
+        padding: 0 12px;
       }
 
       .toggle-switch input {
@@ -62,87 +80,97 @@
       }
 
       .slider {
-        position: absolute;
+        position: relative;
         cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(255, 255, 255, 0.2);
-        transition: .4s;
-        border-radius: 1.5rem;
+        width: 60px;
+        height: 30px;
+        background-color: #4f46e5;
+        border: 1px solid #4f46e5;
+        border-radius: 34px;
+        transition: .3s;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        font-size: 11px;
+        font-weight: 600;
+        color: white;
+        overflow: visible;
+      }
+      
+      .state-text {
+        position: absolute;
+        transition: all 0.3s;
+        line-height: 1;
+      }
+      
+      .state-text {
+        position: absolute;
+        left: 10px;
+        color: white;
+        opacity: 1;
+        z-index: 2;
+        font-weight: 600;
+        line-height: 1;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        transition: all 0.3s;
+        width: 100%;
+        text-align: left;
+      }
+      
+      input:checked + .slider .state-text {
+        color: white;
+        left: 35px;
+      }
+      
+      input:checked + .slider {
+        background-color: white;
+      }
+      
+
+      /* Removed duplicate background-color rule */
+
+      .slider-knob {
+        position: absolute;
+        height: 24px;
+        width: 24px;
+        left: 3px;
+        background-color: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 50%;
+        transition: .3s;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        box-sizing: border-box;
+        z-index: 1;
       }
 
       input:checked + .slider {
         background-color: white;
       }
-
-      .slider-knob {
-        position: absolute;
-        height: 1.25rem;
-        width: 1.25rem;
-        top: 0.25rem;
-        left: 0.25rem;
-        background-color: #2563eb;
-        border-radius: 50%;
-        transition: .4s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.625rem;
-        color: #fff;
-        font-weight: bold;
-        user-select: none;
-      }
-
+      
       input:checked + .slider .slider-knob {
-        transform: translateX(1.75rem);
+        transform: translateX(30px);
+        background-color: #4f46e5;
+        border-color: #4f46e5;
       }
+      
+      input:checked + .slider .state-text.on {
+        color: white;
+      }  
 
-      /* Responsive design for toggle button */
-      @media (max-width: 768px) {
-        .marketing-toggle {
-          top: 90px;
-          right: 15px;
-        }
-        
-        .toggle-container {
-          padding: 0.75rem 1rem;
-          gap: 0.75rem;
-        }
-        
-        .toggle-label {
-          font-size: 0.875rem;
-        }
-        
-        .toggle-switch {
-          width: 3rem;
-          height: 1.5rem;
-        }
-        
-        .slider-knob {
-          height: 1rem;
-          width: 1rem;
-          top: 0.25rem;
-          left: 0.25rem;
-          font-size: 0.5rem;
-        }
-        
-        input:checked + .slider .slider-knob {
-          transform: translateX(1.5rem);
-        }
-      }
-
+      /* Hide label on very small screens */
       @media (max-width: 480px) {
-        .marketing-toggle {
-          top: 80px;
-          right: 10px;
-        }
-        
         .toggle-container {
-          padding: 0.5rem 0.75rem;
-          gap: 0.5rem;
+          flex-direction: row;
+          width: auto;
+          padding: 8px 12px;
         }
+        .toggle-switch {
+          margin-top: 0;
+          margin-left: 8px;
+        }
+      }
 
     </style>
     <!-- existing head content follows -->
@@ -161,18 +189,55 @@
       <button id="promo-close" aria-label="Close">&#x2715;</button>
     </div>
 
-    <!-- Marketing Mode Toggle Button -->
+    <!-- Marketing Mode Toggle Button - OpenWidget Style -->
     <div class="marketing-toggle">
-      <div class="toggle-container">
-        <span id="marketing-text" class="toggle-label">Marketing Mode</span>
-        <label class="toggle-switch">
-          <input type="checkbox" id="toggleCheckbox" checked>
-          <span class="slider">
-            <span id="knob-text" class="slider-knob">ON</span>
-          </span>
-        </label>
+      <div class="toggle-container" id="marketing-toggle-container">
+        <div class="toggle-label">Marketing Mode</div>
+        <button class="toggle-switch" id="marketing-toggle-button">ON</button>
       </div>
     </div>
+    
+    <script>
+      // Toggle functionality
+      const toggleButton = document.getElementById('marketing-toggle-button');
+      const toggleContainer = document.getElementById('marketing-toggle-container');
+      let isActive = true;
+      
+      // Toggle handler
+      toggleContainer.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        if (!isActive) return; // Prevent multiple clicks
+        
+        // Animate to OFF state
+        isActive = false;
+        toggleContainer.style.opacity = '0.7';
+        toggleButton.textContent = 'OFF';
+        
+        // Open documentation page in new tab after a short delay for animation
+        setTimeout(() => {
+          window.open('https://projectsveltos.github.io/sveltos/main/', '_blank');
+          
+          // Revert to ON state after a short delay
+          setTimeout(() => {
+            isActive = true;
+            toggleContainer.style.opacity = '1';
+            toggleButton.textContent = 'ON';
+          }, 300);
+          
+        }, 200);
+      });
+      
+      // Add hover effect
+      toggleContainer.addEventListener('mouseenter', function() {
+        this.style.opacity = '1';
+      });
+      
+      toggleContainer.addEventListener('mouseleave', function() {
+        this.style.opacity = isActive ? '1' : '0.7';
+      });
+    </script>
 
     <!--====== Favicon Icon ======-->
     <link rel="icon" href="/assets/images/SveltoslogoFav.png" type="image/png" />
@@ -2286,7 +2351,7 @@
         // Set initial state based on checkbox
         if (toggleCheckbox.checked) {
           knobText.textContent = "ON";
-          marketingText.textContent = "Marketing Mode";
+          marketingText.textContent = "Marketing Mode ON";
         } else {
           knobText.textContent = "OFF";
           marketingText.textContent = "Marketing Mode";
@@ -2296,7 +2361,7 @@
         toggleCheckbox.addEventListener('change', () => {
           if (toggleCheckbox.checked) {
             knobText.textContent = "ON";
-            marketingText.textContent = "Marketing Mode";
+            marketingText.textContent = "Marketing Mode ON";
           } else {
             knobText.textContent = "OFF";
             marketingText.textContent = "Marketing Mode";
@@ -2307,7 +2372,7 @@
               setTimeout(() => {
                 toggleCheckbox.checked = true;
                 knobText.textContent = "ON";
-                marketingText.textContent = "Marketing Mode";
+                marketingText.textContent = "Marketing Mode ON";
               }, 1000); // 1 second delay to return to ON
             }, 500); // 500ms delay to ensure the animation completes
           }
